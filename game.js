@@ -5,7 +5,7 @@ var Snake = (function () {
 
   var intervalID;
   
-  var tileCount = 10;
+  var tileCount = 40; //10
   var gridSize = 400/tileCount;
 
   const INITIAL_PLAYER = { x: Math.floor(tileCount / 2), y: Math.floor(tileCount / 2) };
@@ -23,6 +23,9 @@ var Snake = (function () {
   var reward = 0;
   var points = 0;
   var pointsMax = 0;
+
+  var infoPoints = document.getElementById('points');
+  var infoTop = document.getElementById('top');
 
   var ActionEnum = { 'none':0, 'up':1, 'down':2, 'left':3, 'right':4 };
   Object.freeze(ActionEnum);
@@ -149,13 +152,15 @@ var Snake = (function () {
         while(trail.length > tail) trail.shift();
       }
 
-      if(!stopped) {
+/*      
+	  if(!stopped) {
         ctx.fillStyle = 'rgba(200,200,200,0.2)';
         ctx.font = "small-caps 14px Helvetica";
-        ctx.fillText("(esc) reset", 24, 356);
-        ctx.fillText("(space) pause", 24, 374);
+        //ctx.fillText("(esc) reset", 24, 356);
+        //ctx.fillText("(space) pause", 24, 374);
       }
-      
+*/
+
       ctx.fillStyle = 'green';
       for(var i=0; i<trail.length-1; i++) {
         ctx.fillRect(trail[i].x * gridSize+1, trail[i].y * gridSize+1, gridSize-2, gridSize-2);
@@ -195,10 +200,14 @@ var Snake = (function () {
         ctx.fillText("press ARROW KEYS to START...", 24, 374);
       }
 
+/*
       ctx.fillStyle = 'white';
       ctx.font = "bold small-caps 16px Helvetica";
       ctx.fillText("points: " + points, 288, 40);
       ctx.fillText("top: " + pointsMax, 292, 60);
+*/
+	  infoPoints.innerHTML = 'Points: <b>' + points + '</b>';
+	  infoTop.innerHTML = 'Top: <b>' + pointsMax + '</b>';
 
       return reward;
     }

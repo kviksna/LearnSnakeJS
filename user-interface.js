@@ -40,7 +40,7 @@ var UserInterface = (function () {
     btnTrain.addEventListener('click', speedFaster);
     btnReset.addEventListener('click', resetSnake);
 
-    var infoScore = document.getElementById('score');
+	var infoScore = document.getElementById('score');
     var infoMissed = document.getElementById('missed');
 
     var rangerLR = document.getElementById('rangeLR');

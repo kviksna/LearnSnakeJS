@@ -142,7 +142,7 @@ var QLearning = (function () {
 
     reset: function () {
       qTable = {};
-      score = 0;
+	  score = 0;
       missed = 0;
     },
 
