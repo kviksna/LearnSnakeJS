@@ -11,17 +11,13 @@
 
 		<div id="setup-container">
 			<div id="game-info">
-				<span id="points" class="info-score">Points: </span>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<span id="top" class="info-score">Top: </span>
-				<!--
-				<br>
-				<span id="score" class="info-score">scored: </span>
-				-->
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<span id="missed" class="info-score">died: </span>
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<span id="datasize" class="info-score">qTable(MB): </span>
+				<span id="points" class="info-score">Points: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<span id="top" class="info-score">Top: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<!-- <br><span id="score" class="info-score">scored: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+				<span id="missed" class="info-score">died: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button id="dataSize" onclick="this.innerText = 'qTable(MB): ' + (JSON.stringify(QLearning.qTable.export()).length / 1000000).toFixed(2);">
+    qTable(MB):
+</button>
 			</div>
 
 			<div id="game-setup">
