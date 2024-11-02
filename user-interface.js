@@ -40,7 +40,7 @@ var UserInterface = (function () {
     btnTrain.addEventListener('click', speedFaster);
     btnReset.addEventListener('click', resetSnake);
 
-	var infoScore = document.getElementById('score');
+    //var infoScore = document.getElementById('score');
     var infoMissed = document.getElementById('missed');
 
     var rangerLR = document.getElementById('rangeLR');
@@ -51,7 +51,7 @@ var UserInterface = (function () {
     setInterval(loop, 100);
 
     function loop () {
-        infoScore.innerHTML = 'scored: <b>' + QLearning.info.score() + (QLearning.info.score() == 1 ? ' point' : ' points') + '</b>';
+        //infoScore.innerHTML = 'scored: <b>' + QLearning.info.score() + (QLearning.info.score() == 1 ? ' point' : ' points') + '</b>';
         infoMissed.innerHTML = 'died: <b>' + Math.abs(QLearning.info.missed()) + (Math.abs(QLearning.info.missed()) == 1 ? ' time' : ' times') + '</b>';
 
         QLearning.changeConst.LearningRate(0.01*rangerLR.value);
